@@ -1,6 +1,9 @@
 :root{
     --bg: #0d0c22;
+    --bgSoft: #2d2b42;
     --text: #f5f5f5;
+    --textSoft: #e5e5e5;
+    --btn: #3673fd;
 }
 
 *{

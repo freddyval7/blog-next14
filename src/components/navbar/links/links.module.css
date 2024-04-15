@@ -10,8 +10,8 @@
   font-weight: bold;
 }
 
-.mobileLinks,
-.menuButton {
+.menuButton,
+.mobileLinks {
   display: none;
 }
 
@@ -22,7 +22,6 @@
 
   .menuButton {
     display: block;
-    font-size: 30px;
     cursor: pointer;
   }
 
@@ -35,48 +34,8 @@
     background-color: var(--bg);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 10px;
   }
 }
-
-@media (max-width: 1536px) {
-  .container {
-    width: 1366px;
-  }
-}
-
-@media (max-width: 1366px) {
-  .container {
-    width: 1280px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .container {
-    width: 1024px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .container {
-    width: 768px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    width: 640px;
-  }
-}
-
-@media (max-width: 640px) {
-  .container {
-    width: 476px;
-  }
-}
-
-

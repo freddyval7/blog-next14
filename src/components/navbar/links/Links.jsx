@@ -33,14 +33,19 @@ export const Links = () => {
           <NavLink item={{ title: "Login", path: "/login" }} />
         )}
       </div>
-      <button className={styles.menuButton} onClick={() => setOpen(prev => !prev)}>Menu</button>
-      {
-        open && <div className={styles.mobileLinks}>
+      <button
+        className={styles.menuButton}
+        onClick={() => setOpen((prev) => !prev)}
+      >
+        Menu
+      </button>
+      {open && (
+        <div className={styles.mobileLinks}>
           {links.map((link) => (
             <NavLink key={link.title} item={link} />
           ))}
         </div>
-      }
+      )}
     </div>
   );
 };
