@@ -3,8 +3,9 @@
 import { useState } from "react";
 import styles from "./Links.module.css";
 import NavLink from "./navLink/navLink";
+import { handleLogout } from "@/lib/action";
 
-export const Links = () => {
+export const Links = ({session}) => {
   const [open, setOpen] = useState(false);
 
   const links = [
@@ -14,20 +15,18 @@ export const Links = () => {
     { title: "Blog", path: "/blog" },
   ];
 
-  //TEMPORARY
-  const session = true;
-  const isAdmin = true;
-
   return (
     <div className={styles.container}>
       <div className={styles.links}>
         {links.map((link) => (
           <NavLink key={link.title} item={link} />
         ))}
-        {session ? (
+        {session?.user ? (
           <>
-            {isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
-            <button className={styles.logout}>Logout</button>
+            {session.user?.isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
+            <form action={handleLogout}>
+              <button className={styles.logout}>Logout</button>
+            </form>
           </>
         ) : (
           <NavLink item={{ title: "Login", path: "/login" }} />
